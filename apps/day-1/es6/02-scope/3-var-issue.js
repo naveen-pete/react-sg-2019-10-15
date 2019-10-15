@@ -1,6 +1,12 @@
+
 // Issues with ‘var’ declarations
 var x = 1;
+console.log('before:', x);
+
 {
-   var x = 2;
+   console.log('inside1:', x);
+   // let x = 2;
+   console.log('inside2:', x);
 }
-console.log(x);  // logs 2
+
+console.log('after:', x);  // logs 2

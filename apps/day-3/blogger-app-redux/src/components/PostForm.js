@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
-import { createPost } from '../api/posts';
+// import { createPost } from '../api/posts';
+import { createPost, getCategories } from '../redux/actions';
 
 class PostForm extends Component {
   state = {
@@ -8,6 +10,10 @@ class PostForm extends Component {
     body: '',
     author: '',
     category: ''
+  }
+
+  componentDidMount() {
+    this.props.getCategories();
   }
 
   handleChange = (e) => {
@@ -20,14 +26,17 @@ class PostForm extends Component {
   handleSubmit = (e) => {
     e.preventDefault();
 
-    createPost(this.state)
-      .then(() => {
-        this.props.history.push('/posts');
-      })
-      .catch(error => {
-        console.log('Create post failed!');
-        console.log('Error:', error)
-      });
+    this.props.createPost(this.state)
+      .then(() => this.props.history.push('/posts'));
+
+    // createPost(this.state)
+    //   .then(() => {
+    //     this.props.history.push('/posts');
+    //   })
+    //   .catch(error => {
+    //     console.log('Create post failed!');
+    //     console.log('Error:', error)
+    //   });
   }
 
   render() {
@@ -110,4 +119,17 @@ class PostForm extends Component {
   }
 }
 
-export default PostForm;
+const mapStateToProps = (state) => {
+  return {
+    categories: state.categories
+  };
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    getCategories: () => dispatch(getCategories()),
+    createPost: (post) => dispatch(createPost(post))
+  };
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(PostForm);

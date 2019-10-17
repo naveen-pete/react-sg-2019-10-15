@@ -20,6 +20,55 @@
       "body": "Just kidding. It takes more than 10 minutes to learn technology.",
       "author": "thingone",
       "category": "redux"
+    },
+    {
+      "title": "p1",
+      "body": "p1 body",
+      "author": "abc",
+      "category": "react",
+      "id": 4
+    },
+    {
+      "title": "p2",
+      "body": "p2 body",
+      "author": "def",
+      "category": "react",
+      "id": 5
+    },
+    {
+      "title": "p3",
+      "body": "p3 body",
+      "author": "ghi",
+      "category": "node",
+      "id": 6
+    },
+    {
+      "title": "p4",
+      "body": "p4 body",
+      "author": "ram",
+      "category": "angular",
+      "id": 7
+    },
+    {
+      "title": "p5",
+      "body": "p5 body",
+      "author": "abc",
+      "category": "redux",
+      "id": 8
+    },
+    {
+      "title": "p6",
+      "body": "p6 body",
+      "author": "ram",
+      "category": "node",
+      "id": 9
+    },
+    {
+      "title": "p7",
+      "body": "p7 body",
+      "author": "abc",
+      "category": "angular",
+      "id": 10
     }
   ],
   "categories": [

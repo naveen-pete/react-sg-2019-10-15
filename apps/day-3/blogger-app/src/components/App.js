@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 
 import { Route } from 'react-router-dom';
 
@@ -8,16 +8,26 @@ import Footer from './Footer';
 import Home from './Home';
 import Posts from './Posts';
 import PostForm from './PostForm';
+import { categories } from '../store';
 
-const App = () => {
-  return <div className="container">
-    <Header />
-    <Nav />
-    <Route path="/" component={Home} />
-    <Route path="/posts" component={Posts} />
-    <Route path="/posts/new" component={PostForm} />
-    <Footer />
-  </div>;
-};
+class App extends Component {
+  state = {
+    categories: categories
+  }
+
+  render() {
+    const { categories } = this.state;
+    return <div className="container">
+      <Header />
+      <Nav />
+      <Route path="/" component={Home} />
+      <Route path="/posts" component={Posts} />
+      <Route path="/posts/new" render={() => {
+        return <PostForm categories={categories} />
+      }} />
+      <Footer />
+    </div>;
+  }
+}
 
 export default App;

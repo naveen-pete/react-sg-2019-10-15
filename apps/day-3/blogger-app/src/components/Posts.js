@@ -43,7 +43,7 @@ class Posts extends Component {
 
   renderPosts(posts) {
 
-    return <table className="table table-striped">
+    return <table className="table table-bordered table-hover">
       <thead>
         <tr>
           <th scope="col">Title</th>

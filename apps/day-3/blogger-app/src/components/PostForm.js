@@ -33,7 +33,7 @@ class PostForm extends Component {
     const { title, category, body, author } = this.state;
 
     return <div>
-      <h3 className="mr-3">Post Form</h3>
+      <h4 className="mr-3">Post Form</h4>
 
       <div className="card bg-light">
         <div className="card-body">
